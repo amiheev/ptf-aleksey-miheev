@@ -17,7 +17,8 @@ public class GroupCreationTests extends TestBase {
     app.getGroupHelper().submitGroupCreation();
     app.getGroupHelper().returnGroupPage();
   }
-  @Test
+  // просто комментарий не служащий ни для чего
+ // @Test
   public void testEmptyGroupCreation() throws Exception {
 	app.getNavigationHelper().openMainPage();
     app.getNavigationHelper().goToGroupsPage();
