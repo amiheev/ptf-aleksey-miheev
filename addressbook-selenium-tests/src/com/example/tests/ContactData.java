@@ -1,6 +1,6 @@
 package com.example.tests;
 
-public class ContactData {
+public class ContactData implements Comparable<ContactData> {
 	public String nameone;
 	public String nametwo;
 	public String addressone;
@@ -40,4 +40,41 @@ public class ContactData {
 		this.addresstwo = addresstwo;
 		this.homeone = homeone;
 	}
+
+	@Override
+	public String toString() {
+		return "ContactData [nameone=" + nameone + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		//result = prime * result + ((nameone == null) ? 0 : nameone.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ContactData other = (ContactData) obj;
+		if (nameone == null) {
+			if (other.nameone != null)
+				return false;
+		} else if (!nameone.equals(other.nameone))
+			return false;
+		return true;
+	}
+
+	@Override
+	public int compareTo(ContactData other) {
+		return this.nameone.toLowerCase().compareTo(other.nameone.toLowerCase());
+	}
+	
+	
 }
