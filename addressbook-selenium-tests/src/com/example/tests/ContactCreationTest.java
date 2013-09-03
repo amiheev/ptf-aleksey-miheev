@@ -38,7 +38,8 @@ public class ContactCreationTest extends TestBase   {
     app.getContactHelper().returnToMainPage();
     
     //save new state
-    List<ContactData> newList = app.getContactHelper().getContacts(); 
+    List<ContactData> newList = app.getContactHelper().getContacts();
+    
     //compare states
     oldList.add(contact);
     Collections.sort(oldList);
@@ -46,13 +47,13 @@ public class ContactCreationTest extends TestBase   {
   }
   
   //@Test
-  public void testEmptyContactCreation() throws Exception {
-    app.getNavigationHelper().goToMainPage();
-    app.getContactHelper().contactCreation();
-    app.getContactHelper().fillContactData(new ContactData("", "", "", "", "", "", "", "", "-", "-", "", "[none]", "", ""));
-    app.getContactHelper().acceptContactCreation();
-    app.getContactHelper().returnToMainPage();
-  }
+ // public void testEmptyContactCreation() throws Exception {
+  //  app.getNavigationHelper().goToMainPage();
+  //  app.getContactHelper().contactCreation();
+  //  app.getContactHelper().fillContactData(new ContactData("", "", "", "", "", "", "", "", "-", "-", "", "[none]", "", ""));
+  //  app.getContactHelper().acceptContactCreation();
+   // app.getContactHelper().returnToMainPage();
+//  }
 
 
 }

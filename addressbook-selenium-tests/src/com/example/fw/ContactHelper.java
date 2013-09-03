@@ -53,15 +53,15 @@ public class ContactHelper extends HelperBase {
 
 	public List<ContactData> getContacts() {
 		List<ContactData> contacts = new ArrayList<ContactData>();
-		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
-		for (WebElement checkbox : checkboxes) {
-			ContactData contact = new ContactData();
-			String alt = checkbox.getAttribute("alt");
-			contact.nameone = alt.substring("Select (".length(), alt.length() - ")".length());
-			contact.nametwo = alt.substring("Select (".length(), alt.length() - ")".length());
-			contacts.add(contact);
+		List<WebElement> rows = driver.findElements(By.xpath("//tr[2]"));
+		for (WebElement row : rows) {
+			List<WebElement> cells = row.findElements(By.tagName("td"));
+			String nameone = cells.get(2).getText();
 		}
 		return contacts;
 	}
 
 }
+
+
+
