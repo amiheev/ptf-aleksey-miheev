@@ -53,10 +53,13 @@ public class ContactHelper extends HelperBase {
 
 	public List<ContactData> getContacts() {
 		List<ContactData> contacts = new ArrayList<ContactData>();
-		List<WebElement> rows = driver.findElements(By.xpath("//tr[2]"));
+		List<WebElement> rows = driver.findElements(By.xpath("//tr[@name='entry']"));
 		for (WebElement row : rows) {
+			ContactData contact = new ContactData();
+			contacts.add(contact);
 			List<WebElement> cells = row.findElements(By.tagName("td"));
-			String nameone = cells.get(2).getText();
+			contact.nameone = cells.get(2).getText();
+			
 		}
 		return contacts;
 	}
