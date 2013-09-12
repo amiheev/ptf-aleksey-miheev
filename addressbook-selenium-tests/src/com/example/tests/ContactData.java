@@ -1,14 +1,14 @@
 package com.example.tests;
 
 public class ContactData implements Comparable<ContactData>  {
-	public String nameone;
-	public String nametwo;
+	public String name;
+	public String lastname;
 	public String addressone;
 	public String phoneone;
 	public String phonetwo;
 	public String phonethree;
-	public String emailone;
-	public String emailtwo;
+	public String emailOne;
+	public String emailTwo;
 	public String birthdayday;
 	public String birthdaymonth;
 	public String birthdayyear;
@@ -20,33 +20,9 @@ public class ContactData implements Comparable<ContactData>  {
 		
 	}
 
-	public ContactData(String nameone, String nametwo, String addressone,
-			String phoneone, String phonetwo, String phonethree,
-			String emailone, String emailtwo, String birthdayday,
-			String birthdaymonth, String birthdayyear, String group,
-			String addresstwo, String homeone) {
-		this.nameone = nameone;
-		this.nametwo = nametwo;
-		this.addressone = addressone;
-		this.phoneone = phoneone;
-		this.phonetwo = phonetwo;
-		this.phonethree = phonethree;
-		this.emailone = emailone;
-		this.emailtwo = emailtwo;
-		this.birthdayday = birthdayday;
-		this.birthdaymonth = birthdaymonth;
-		this.birthdayyear = birthdayyear;
-		this.group = group;
-		this.addresstwo = addresstwo;
-		this.homeone = homeone;
-	}
-	
-
-
-
 	@Override
 	public String toString() {
-		return "ContactData [nameone=" + nameone + ", nametwo=" + nametwo
+		return "ContactData [nameone=" + name + ", nametwo=" + lastname
 				+ ", addressone=" + addressone + ", addresstwo=" + addresstwo
 				+ "]";
 	}
@@ -55,7 +31,7 @@ public class ContactData implements Comparable<ContactData>  {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((nameone == null) ? 0 : nameone.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
 
@@ -68,17 +44,17 @@ public class ContactData implements Comparable<ContactData>  {
 		if (getClass() != obj.getClass())
 			return false;
 		ContactData other = (ContactData) obj;
-		if (nameone == null) {
-			if (other.nameone != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!nameone.equals(other.nameone))
+		} else if (!name.equals(other.name))
 			return false;
 		return true;
 	}
 
 	@Override
 	public int compareTo(ContactData other) {
-		return this.nameone.toLowerCase().compareTo(other.nameone.toLowerCase());
+		return this.name.toLowerCase().compareTo(other.name.toLowerCase());
 		
 	}
 }

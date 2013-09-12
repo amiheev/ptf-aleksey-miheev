@@ -47,6 +47,34 @@ public class TestBase {
 			return  "test" + rnd.nextInt();
 		}
 	}
+	@DataProvider
+	public Iterator<Object[]> randomValidContactGenerator() {
+		List<Object[]> list = new ArrayList<Object[]>();
+		for (int i = 0; i < 5; i++) {
+			ContactData contact = new ContactData();
+			contact.name = generateRandomStringDva();
+			contact.lastname = generateRandomStringDva();
+			contact.addressone = generateRandomStringDva();
+			contact.addresstwo = generateRandomStringDva();
+			list.add(new Object[]{contact});
+		}
+		return list.iterator();
+	}
 	
+	public String generateRandomStringDva() {
+		Random rnd = new Random();
+		if (rnd.nextInt(3) == 0) {
+			return "";
+		}
+		else {
+			return "test" + rnd.nextInt();
+		}
+		
+	}
+ 
+
 
 }
+
+
+	

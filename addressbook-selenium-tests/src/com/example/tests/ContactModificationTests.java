@@ -20,7 +20,7 @@ public class ContactModificationTests extends TestBase {
 	    
 		app.getNavigationHelper().initContact();
 		ContactData contact = new ContactData();
-		contact.nameone = "new name 1";
+		contact.name = "new name 1";
 		app.getContactHelper().fillContactData(contact);
 		app.getContactHelper().submitContactModification();
 		app.getContactHelper().returnToMainPage();
